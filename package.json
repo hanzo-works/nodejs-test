@@ -1,7 +1,3 @@
-npm init --yes
-
-Wrote to /Users/n0bisuke/dotstudio/blogsamplecode/lig/webapps/package.json:
-
 {
   "name": "webapps",
   "version": "1.0.0",
