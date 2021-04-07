@@ -1,8 +1,19 @@
-var http = require('http')
-var os = require('os')
+// Authentication module.
+const auth = require('http-auth');
+const authConnect = require('http-auth-connect');
 
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'})
-    const host = os.hostname()
-    res.end(`Hello World ${host} \n`)
-}).listen(8080)
+const basic = auth.basic({
+    realm: "Simon Area.",
+    file: __dirname + "/data/users.htpasswd"
+});
+const PORT = process.env.PORT || 3000;
+// Application setup.
+const express = require('express');
+const app = express();
+app.use(authConnect(basic));
+
+// Setup route.
+app.get('/', (req, res) => {
+    res.send(`Hello from express - ${req.user}!`);
+});
+app.listen(PORT);
