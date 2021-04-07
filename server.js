@@ -1,12 +1,8 @@
-//app.js
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
-const basicAuth = require('basic-auth-connect');
+var http = require('http')
+var os = require('os')
 
-app.use(basicAuth('n0bisuke', 'sugawara'));
-app.get('/', (req, res) => {
-  res.send('Hello World')
-});
-
-app.listen(PORT);
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'})
+    const host = os.hostname()
+    res.end(`Hello World ${host} \n`)
+}).listen(8080)
