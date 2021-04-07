@@ -52,5 +52,5 @@ jobs:
       with:
         app-name: 'hanzotest'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_092b5d8965134edf8d30b096cd361f73 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2babf52f25874df69f5373f436f06830 }}
         package: .
