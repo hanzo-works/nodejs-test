@@ -4,7 +4,7 @@ const authConnect = require('http-auth-connect');
 
 const basic = auth.basic({
     realm: "Simon Area.",
-    file: __dirname + "/users.htpasswd"
+    file: __dirname + "/data/users.htpasswd"
 });
 const PORT = process.env.PORT || 3000;
 // Application setup.
