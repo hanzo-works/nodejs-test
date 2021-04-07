@@ -6,7 +6,7 @@
 //    realm: "Simon Area.",
 //    file: __dirname + "/data/users.htpasswd"
 //});
-//const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 // Application setup.
 const express = require('express');
 const app = express();
